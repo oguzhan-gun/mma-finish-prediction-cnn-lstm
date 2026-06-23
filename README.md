@@ -39,30 +39,23 @@ To train the model from scratch:
 3. Open the preprocessing and training scripts.
 4. Update all dataset paths to match your local directory structure.
 
-For example, the development environment used paths similar to:
+For example, in `model/preprocess.py`:
 
 ```python
-"mma-finish-prediction-cnn-lstm/model/..."
+finished = "database/mma_finished_videos"
+unfinished = "database/mma_unfinished"
 ```
 
-These paths will likely not exist on your system and must be modified before running the preprocessing or training pipeline.
-
-In particular, check and update any dataset-related paths inside:
-
-```text
-model/preprocess.py
-```
-
-and other training scripts if necessary.
+Replace these paths with the locations where you extracted the Kaggle dataset on your system before running the preprocessing and training pipeline.
 
 ## How to Run
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your_username/mma-finish-predictor.git
+git clone https://github.com/oguzhan-gun/mma-finish-prediction-cnn-lstm.git
 
-cd mma-finish-predictor
+cd mma-finish-prediction-cnn-lstm$
 ```
 
 ### 2. Install Dependencies
