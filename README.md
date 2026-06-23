@@ -76,6 +76,16 @@ Run the prediction script by providing a video file:
 python predict.py videos/charles_vs_chandler.mp4
 ```
 
+#### Visual Prediction
+
+To display the video together with real-time predictions:
+
+```bash
+python predict_visual.py videos/charles_vs_chandler.mp4
+```
+
+This mode visualizes the fight footage while showing the current prediction score, classification status, and video timestamp.
+
 ### Example Output
 
 ```text
@@ -95,7 +105,9 @@ CONFIDENCE: 77.1%
 * 30 FPS recommended
 * MMA fight footage
 * Minimum 20 seconds duration recommended
-
+* Predictions are generated from 20-second video segments
+* Segments should primarily contain active combat footage, as the model was trained on fight sequences
+* Large amounts of non-fight content (replays, advertisements, fighter introductions, crowd shots, etc.) may negatively affect prediction performance
 
 ## Video Analysis Strategy
 
@@ -163,8 +175,8 @@ Current evaluation results on the test set:
 ### Evaluation Visualizations
 
 <p align="center">
-  <img src="images/confusion_matrix.png" width="45%">
-  <img src="images/roc_curve.png" width="45%">
+  <img src="metrics_result/confusion_matrix.png" width="45%">
+  <img src="metrics_result/roc_curve.png" width="45%">
 </p>
 
 ---
