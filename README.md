@@ -70,16 +70,23 @@ Place the trained model file (`model.h5`) inside the project directory.
 
 ### 4. Run Prediction
 
-Edit the video path inside `predict.py`:
-
-```python
-video_path = "/path/to/your/video.mp4"
-```
-
-Then run:
+Run the prediction script by providing a video file:
 
 ```bash
-python predict.py
+python predict.py videos/charles_vs_chandler.mp4
+```
+
+Example output:
+
+```text
+0-20s   | Prediction: 0.214
+20-40s  | Prediction: 0.302
+40-60s  | Prediction: 0.771
+
+==========
+FINAL RESULT: FINISHED
+CONFIDENCE: 77.1%
+==========
 ```
 
 ### Example Output
