@@ -76,19 +76,6 @@ Run the prediction script by providing a video file:
 python predict.py videos/charles_vs_chandler.mp4
 ```
 
-Example output:
-
-```text
-0-20s   | Prediction: 0.214
-20-40s  | Prediction: 0.302
-40-60s  | Prediction: 0.771
-
-==========
-FINAL RESULT: FINISHED
-CONFIDENCE: 77.1%
-==========
-```
-
 ### Example Output
 
 ```text
