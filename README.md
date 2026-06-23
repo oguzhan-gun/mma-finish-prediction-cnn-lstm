@@ -175,8 +175,8 @@ Current evaluation results on the test set:
 ### Evaluation Visualizations
 
 <p align="center">
-  <img src="metrics_result/confusion_matrix.png" width="45%">
-  <img src="metrics_result/roc_curve.png" width="45%">
+  <img src="model/metrics_result/confusion_matrix.png" width="45%">
+  <img src="model/metrics_result/roc_curve.png" width="45%">
 </p>
 
 ---
