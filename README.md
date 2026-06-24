@@ -185,8 +185,8 @@ This CNN-LSTM combination allows the model to learn both spatial and temporal in
 
 <p align="center">
   <img src="train/metric_results/cm.png" width="45%">
-  <img src="train/metric_results/metrics.png" width="45%">
   <img src="train/metric_results/roc.png" width="45%">
+  <img src="train/metric_results/metrics.png" width="45%">
 </p>
 
 ---
