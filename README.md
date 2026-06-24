@@ -39,7 +39,7 @@ To train the model from scratch:
 3. Open the preprocessing and training scripts.
 4. Update all dataset paths to match your local directory structure.
 
-For example, in `model/preprocess.py`:
+For example, in `train/train.py`:
 
 ```python
 finished = "database/mma_finished_videos"
@@ -166,17 +166,19 @@ Current evaluation results on the test set:
 
 | Metric | Score |
 |---------|---------|
-| Accuracy | 85.71% |
-| Precision | 88.89% |
+| Accuracy | 90.48% |
+| Precision | 100.00% |
 | Recall | 80.00% |
-| F1 Score | 84.21% |
-| ROC-AUC | 92.73% |
+| F1 Score | 88.00% |
+| ROC-AUC | 95.45% |
+
 
 ### Evaluation Visualizations
 
 <p align="center">
-  <img src="model/metrics_result/confusion_matrix.png" width="45%">
-  <img src="model/metrics_result/roc_curve.png" width="45%">
+  <img src="train/metric_results/cm.png" width="45%">
+  <img src="train/metric_results/metrics.png" width="45%">
+  <img src="train/metric_results/roc.png" width="45%">
 </p>
 
 ---

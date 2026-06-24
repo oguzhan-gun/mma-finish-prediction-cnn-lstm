@@ -3,7 +3,7 @@ from tensorflow.keras.models import load_model
 import cv2
 
 model = load_model(
-    "model/model.h5",
+    "train/model.h5",
     compile=False
 )
 

@@ -1,9 +1,0 @@
-Accuracy : 0.8571
-Precision: 0.8889
-Recall   : 0.8000
-F1 Score : 0.8421
-ROC AUC  : 0.9273
-
-Confusion Matrix
-[[10  1]
- [ 2  8]]
