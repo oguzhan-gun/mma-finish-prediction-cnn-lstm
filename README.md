@@ -28,6 +28,21 @@ All videos are processed at:
 To maintain a consistent input size, 32 representative frames are sampled from each analyzed video segment.
 
 ---
+
+## Performance
+
+Current evaluation results on the test set:
+
+| Metric | Score |
+|---------|---------|
+| Accuracy | 90.48% |
+| Precision | 100.00% |
+| Recall | 80.00% |
+| F1 Score | 88.00% |
+| ROC-AUC | 95.45% |
+
+---
+
 ### Training Preparation
 
 The dataset is not included in this repository due to its size.
@@ -50,12 +65,18 @@ Replace these paths with the locations where you extracted the Kaggle dataset on
 
 ## How to Run
 
+<p align="center">
+  <img src="images/demo.gif" alt="CNN-LSTM MMA Fight Prediction Demo" width="700">
+  <br>
+  <em>Real-time CNN-LSTM prediction on an MMA fight video.</em>
+</p>
+
 ### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/oguzhan-gun/mma-finish-prediction-cnn-lstm.git
 
-cd mma-finish-prediction-cnn-lstm$
+cd mma-finish-prediction-cnn-lstm
 ```
 
 ### 2. Install Dependencies
@@ -159,19 +180,6 @@ Used for:
 This CNN-LSTM combination allows the model to learn both spatial and temporal information from MMA fight footage.
 
 ---
-
-## Performance
-
-Current evaluation results on the test set:
-
-| Metric | Score |
-|---------|---------|
-| Accuracy | 90.48% |
-| Precision | 100.00% |
-| Recall | 80.00% |
-| F1 Score | 88.00% |
-| ROC-AUC | 95.45% |
-
 
 ### Evaluation Visualizations
 

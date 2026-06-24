@@ -135,8 +135,47 @@ def predict_video(video_path):
 
             frame_buffer = []
 
+
+
+    
+    if len(frame_buffer) > 0:
+    
+        indices = np.linspace(
+            0,
+            len(frame_buffer) - 1,
+            MAX_FRAMES
+        ).astype(int)
+    
+        sampled_frames = [
+            frame_buffer[i]
+            for i in indices
+        ]
+    
+        pred = predict_from_frames(
+            sampled_frames
+        )
+    
+        predictions.append(pred)
+    
+        start_time = (
+            window_number * WINDOW_SECONDS
+        )
+    
+        duration = len(frame_buffer) / fps
+    
+        end_time = (
+            start_time + duration
+        )
+    
+        print(
+            f"{start_time:.1f}-{end_time:.1f}s | "
+            f"Prediction: {pred:.3f}"
+        )
+    
+    
     cap.release()
 
+    
     if len(predictions) == 0:
 
         print(

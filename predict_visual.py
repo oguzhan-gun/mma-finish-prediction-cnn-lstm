@@ -10,7 +10,7 @@ WINDOW_SECONDS = 20
 
 
 model = load_model(
-    "model/model.h5",
+    "train/model.h5",
     compile=False
 )
 dummy = np.zeros(
@@ -213,8 +213,43 @@ def predict_video(video_path):
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
 
+
+    
+    if len(frame_buffer) > 0:
+    
+        indices = np.linspace(
+            0,
+            len(frame_buffer) - 1,
+            MAX_FRAMES
+        ).astype(int)
+    
+        sampled_frames = [
+            frame_buffer[i]
+            for i in indices
+        ]
+    
+        pred = predict_from_frames(
+            sampled_frames
+        )
+    
+        predictions.append(pred)
+    
+        start_time = (
+            window_number * WINDOW_SECONDS
+        )
+    
+        duration = len(frame_buffer) / fps
+    
+        end_time = (
+            start_time + duration
+        )
+    
+        print(
+            f"{start_time:.1f}-{end_time:.1f}s | "
+            f"Prediction: {pred:.3f}"
+        )
+
     cap.release()
-    cv2.destroyAllWindows()
 
     if len(predictions) == 0:
 
@@ -239,7 +274,69 @@ def predict_video(video_path):
         if final_prediction > 0.5
         else "UNFINISHED"
     )
-
+    
+    result_frame = display_frame.copy()
+    
+    while True:
+    
+        cv2.putText(
+            result_frame,
+            "Press Q to Exit",
+            (700, 520),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.6,
+            (0, 255, 255),
+            2
+        )    
+    
+        cv2.rectangle(
+            result_frame,
+            (10, 10),
+            (420, 140),
+            (0, 0, 0),
+            -1
+        )
+    
+        cv2.putText(
+            result_frame,
+            f"Final Prediction: {final_prediction:.3f}",
+            (20, 40),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.7,
+            (0, 255, 0),
+            2
+        )
+    
+        cv2.putText(
+            result_frame,
+            f"Final Status: {label}",
+            (20, 75),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.7,
+            (0, 255, 0),
+            2
+        )
+    
+        cv2.putText(
+            result_frame,
+            f"Confidence: %{confidence * 100:.1f}",
+            (20, 110),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.7,
+            (0, 255, 0),
+            2
+        )
+    
+        cv2.imshow(
+            "MMA Finish Prediction",
+            result_frame
+        )
+    
+        if cv2.waitKey(1) & 0xFF == ord("q"):
+            break
+        
+    cv2.destroyAllWindows()
+    
     print("\n==========")
     print(
         f"FINAL RESULT: {label}"
