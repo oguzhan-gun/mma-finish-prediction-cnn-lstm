@@ -1,5 +1,10 @@
 # MMA Finish Prediction Using CNN-LSTM
 
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
+![CNN-LSTM](https://img.shields.io/badge/Architecture-CNN--LSTM-purple)
+![Classification](https://img.shields.io/badge/Task-Classification-green)
+
 ## Overview
 
 This project focuses on predicting whether a Mixed Martial Arts (MMA) fight will end with a finish (KO, TKO, Submission) or continue to a decision by analyzing fight videos using deep learning techniques.
