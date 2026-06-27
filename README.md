@@ -32,6 +32,10 @@ All videos are processed at:
 
 To maintain a consistent input size, 32 representative frames are sampled from each analyzed video segment.
 
+## Annotation
+
+All samples were manually annotated. The beginning of each positive video segment was selected to correspond as closely as possible to the moment when the referee initiates the intervention, indicating that the fight is considered over. This annotation strategy was chosen to provide a consistent and realistic ground truth for training the model to recognize fight-ending situation
+
 ---
 
 ## Performance
